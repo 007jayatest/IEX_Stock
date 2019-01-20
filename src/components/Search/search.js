@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HistoriacalData from '../HistoricalData/historical-data';
 import StockPerformance from '..//StockPerformace/stock-performance';
+import Dividends from '../Dividends/dividend';
 import axios from 'axios';
 import SearchBar from 'material-ui-search-bar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -12,7 +13,8 @@ class Search extends Component {
             quote: '',
             data: [],
             performanceChange: '',
-            showData: false
+            showData: false,
+            dividendData:[]
 
         };
     }
@@ -30,6 +32,15 @@ class Search extends Component {
                     showData: true
                 });
 
+            })
+            .catch(err => console.log(err));
+            axios
+            .get(
+                 `https://api.iextrading.com/1.0/stock/${value}/dividends/5y?filter=declaredDate,type,amount`
+            )
+            .then(res => {
+                console.log("data dividens", res.data)
+                this.setState({ dividendData: res.data});
             })
             .catch(err => console.log(err));
     };
@@ -56,33 +67,12 @@ class Search extends Component {
                     <React.Fragment>
                         <HistoriacalData item={newData} />
                         <StockPerformance item={newData} change={this.state.performanceChange} />
+                        <Dividends item={this.state.dividendData} />
                     </React.Fragment>
                     : ''
                 }
             </div>
         );
-        // return (
-        //     <div>
-        //         <form onSubmit={this.findQuote}>
-        //             <div>
-        //                 <input
-        //                     type="text"
-        //                     name="quote"
-        //                     placeholder="quote"
-        //                     value={this.state.quote}
-        //                     onChange={this.onChange}
-        //                 />
-        //             </div>
-        //         </form>
-        //         {this.state.showData ? 
-        //             <React.Fragment>
-        //                 <HistoriacalData item={newData} />
-        //                 <StockPerformance item={newData} change={this.state.performanceChange} />
-        //             </React.Fragment>
-        //             : " "
-        //          }
-        //     </div>
-        // );
     }
 }
 

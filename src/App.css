@@ -1,7 +1,10 @@
 .App {
   margin: 160px;
-  margin-top:50px;
+  margin-top: 50px;
   margin-bottom: 0px;
+  padding-left: 0%;
+  background-color: lightblue;
+  margin-left: 12%;
 }
 
 table {
@@ -47,11 +50,13 @@ h4 span{
 
 .shares-traded p{
   margin: 0;
+  margin-left: 5%;
 }
 
 .search-bar{
   margin-top: 50px;
   margin-bottom: 20px;
+  margin-left: 5%;
 }
 
 .historical-data-p{
