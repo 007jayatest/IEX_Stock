@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+// import ReactDOM from 'react-dom'
+// import MaterialTable from 'material-table'
 export class HistoriacalData extends Component {
     constructor(props){
         super(props);
@@ -8,8 +9,8 @@ export class HistoriacalData extends Component {
     render() {
         return (
             <React.Fragment>
-                <p>Historical Data</p>
-                <table>
+                <p className="historical-data-p">Historical Data</p>
+                <table className="historical-data-table">
                     <tbody>
                         <tr>
                             <th>Open</th>

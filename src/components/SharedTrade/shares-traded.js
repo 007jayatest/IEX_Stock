@@ -18,9 +18,9 @@ class SharesTraded extends Component {
             .then(res => {
                 const symbolsTradedValue = res.data.symbolsTraded.value;
                 const volumeTradedValue = res.data.volume.value;
-                this.setState({ 
-                    symbolsTraded: symbolsTradedValue, 
-                    volumeTraded: volumeTradedValue 
+                this.setState({
+                    symbolsTraded: symbolsTradedValue,
+                    volumeTraded: volumeTradedValue
                 });
             })
             .catch(err => console.log(err));
@@ -28,11 +28,10 @@ class SharesTraded extends Component {
 
     render() {
         return (
-            <div>
-                <h4>Companise stock got traded</h4>
-                <p>{this.state.symbolsTraded}</p>
-                <h4>Total no of shares traded volume</h4>
-                <p>{this.state.volumeTraded}</p>
+            <div className="shares-traded">
+                <h4>Company's stock got traded : <span className="h4-span"> {this.state.symbolsTraded} </span></h4>
+                <p></p>
+                <h4>Total no of shares traded volume : <span className="h4-span"> {this.state.volumeTraded} </span> </h4>
             </div>
         );
     }

@@ -23,9 +23,9 @@ export default class StockPerformance extends Component {
                     </tbody>
                 </table>
                 { 
-                    this.props.change ? 
+                    this.props.change > 0 ? 
                     <p>Stock price increased by {Math.round(this.props.change * 100)} cents </p> 
-                    : <p>Stock price decreased by {this.props.change * 100} cents</p>
+                    : <p>Stock price decreased by {Math.round(this.props.change * 100)} cents</p>
                 }
             </React.Fragment>
 
