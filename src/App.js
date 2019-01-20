@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Search from './components/search';
-import SharesTraded from './components/shares-traded';
+import Search from './components/Search/search';
+import SharesTraded from './components/SharedTrade/shares-traded';
 import './App.css';
 
 class App extends Component {
