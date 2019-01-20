@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import HistoriacalData from './historical-data';
 import axios from 'axios';
 class SharesTraded extends Component {
 
@@ -21,8 +20,6 @@ class SharesTraded extends Component {
         .then(res => {
             const symbolsTradedValue=res.data.symbolsTraded.value;
               const volumeTradedValue =res.data.volume.value;
-          console.log("dataaaa",res.data.symbolsTraded.value)
-          console.log("dataaaa",res.data.volume.value)
           this.setState({ symbolsTraded: symbolsTradedValue,volumeTraded:volumeTradedValue });
         })
         .catch(err => console.log(err));
