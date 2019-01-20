@@ -29,6 +29,7 @@ class SharesTraded extends Component {
     render() {
         return (
             <div className="shares-traded">
+                <h1>IEX Stocks</h1>
                 <h4>Company's stock got traded : <span className="h4-span"> {this.state.symbolsTraded} </span></h4>
                 <p></p>
                 <h4>Total no of shares traded volume : <span className="h4-span"> {this.state.volumeTraded} </span> </h4>

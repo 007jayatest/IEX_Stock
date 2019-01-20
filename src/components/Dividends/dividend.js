@@ -8,7 +8,7 @@ export default class Dividends extends Component {
 
         return (
             <React.Fragment>
-                <p>Dividends data</p>
+                <p className="historical-data-p">Dividends data</p>
                 <table>
                     <tbody>
                         <tr>

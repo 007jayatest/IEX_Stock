@@ -5,7 +5,7 @@ export default class StockPerformance extends Component {
     render() {
         return (
             <React.Fragment>
-                <p>Stock Performance</p>
+                <p className="historical-data-p">Stock Performance</p>
                 <table>
                     <tbody>
                         <tr>
